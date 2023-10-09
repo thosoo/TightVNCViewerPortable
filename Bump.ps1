@@ -47,7 +47,7 @@ if ($appinfo["Version"]["DisplayVersion"] -ne $tag2){
     }
 
     # Extract MSI files using a specific path to 7z.exe
-    $sevenZipPath = "D:\a\$name\7Zip\win\7z.exe"
+    $sevenZipPath = "D:\a\$name\7Zip\win\7za.exe"
     $msiFiles = @("tightvnc-$tag2-gpl-setup-32bit.msi", "tightvnc-$tag2-gpl-setup-64bit.msi")
     $extractDirs = @("32bit", "64bit")
     for ($i = 0; $i -lt $msiFiles.Length; $i++) {

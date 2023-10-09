@@ -18,4 +18,4 @@ $installerGeneratorPath = "D:\a\$name\PortableApps.comInstaller\PortableApps.com
 Start-Process -FilePath $installerGeneratorPath -ArgumentList "D:\a\$name\$name" -NoNewWindow -Wait
 
 Get-ChildItem $directoryPath
-
+Get-ChildItem $parentDirectory

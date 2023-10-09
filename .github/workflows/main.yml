@@ -19,6 +19,13 @@ jobs:
       with:
         ref: ${{ github.head_ref }}
         token: ${{ secrets.PAT }}
+        
+    - name: Clone PortableApps.comInstaller
+      uses: actions/checkout@v3
+      with:
+       repository: develar/7zip-bin
+       ref: master
+       path: 7zip-bin
     
     - name: Install required PowerShell modules
       if: steps.cacher.outputs.cache-hit != 'true'

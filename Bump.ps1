@@ -74,6 +74,8 @@ if ($appinfo["Version"]["DisplayVersion"] -ne $tag2){
         }
     }
 
+    Remove-Item "D:\a\$name\7Zip\" -Recurse -Force
+
     # Print a message indicating the version has been bumped and set SHOULD_COMMIT to yes in the GitHub environment file
     Write-Host "Bumped to "+$tag2
     echo "SHOULD_COMMIT=yes" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf8 -Append

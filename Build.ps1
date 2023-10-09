@@ -17,5 +17,10 @@ Write-Host "Starting Installer Generator"
 $installerGeneratorPath = "D:\a\$name\PortableApps.comInstaller\PortableApps.comInstaller.exe"
 Start-Process -FilePath $installerGeneratorPath -ArgumentList "D:\a\$name\$name" -NoNewWindow -Wait
 
+# Move any .paf.exe files from parent directory to current directory
+Get-ChildItem -Path $parentDirectory -Filter "*.paf.exe" | ForEach-Object {
+    Move-Item -Path $_.FullName -Destination $directoryPath -Force
+}
+
 Get-ChildItem $directoryPath
 Get-ChildItem $parentDirectory

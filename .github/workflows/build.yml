@@ -42,7 +42,7 @@ jobs:
      
      - name: Create Tag using upstream Tag
        if: env.SHOULD_BUILD == 'yes'
-       uses: actions/github-script@v3
+       uses: actions/github-script@v6
        env:
           TAG: ${{ env.UPSTREAM_TAG }}
        with:
